@@ -5,12 +5,12 @@
  * 3. 通常会把 state tree 和 reducer 按组件纬度进行拆分, 使用
  * combineReducers 可以把所有的 reducer 合并到一个 reducer 方法
  * 
- * @param  reducer 接收两个参数, 当前的状态树和要执行的动作(action),
+ * @param reducer 接收两个参数, 当前的状态树和要执行的动作(action),
  * 并返回执行完 action 后的状态树. reducer 实际上表示的是更改 state 的
  * 计划, 在创建 store 时进行传入, 保证了程序运行时状态通过计划内的方法进
  * 行更改.
  * 
- * @param  preloadedState 初始化的状态. 
+ * @param preloadedState 初始化的状态. 
  * 
  * @param enhancer store 的功能拓展(实际上就是一堆中间件的集合). 可使用 
  * applyMiddleware 创建中间件来拓展 redux 的功能
