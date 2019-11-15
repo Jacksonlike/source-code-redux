@@ -18,10 +18,9 @@
  */
 export default function combineReducers(reducers) {
   // 省略一些不影响功能的代码
-  const reducers = reducers
   const reducerKeys = Object.keys(reducers)
 
-  return function combination(state, action) {
+  return function combination(state={}, action) {
     // TODO hasChange 这个变量是不是可以不要呢？
     let hasChanged = false
     const nextState = {}
@@ -31,8 +30,8 @@ export default function combineReducers(reducers) {
     // 中每一个 reducer 都会被调用到, 而最终 combination 函数返回的 state 
     // 是所有 reducer 函数的返回的子 state 的集合.
     for (let i = 0; i < reducerKeys.length; i++) {
-      const key = reducerKeys[i];
-      const reducer = reducerKeys[key]
+      const key = reducerKeys[i]
+      const reducer = reducers[key]
       const previousStateForKey = state[key]
       const nextStateForKey = reducer(previousStateForKey, action)
 

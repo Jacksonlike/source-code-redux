@@ -95,7 +95,6 @@ export default function createStore(
       ensureCanMutateNextListeners()
       const index = nextListeners.indexOf(listener)
       nextListeners.splice(index, 1)
-      // TODO
       currentListeners = null
     }
   }
