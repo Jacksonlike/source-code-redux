@@ -108,7 +108,7 @@ export default function createStore(
    * 
    * 只支持纯对象的 action. 如果需要 dispatch 一个 Promise, Observable
    * 等其他一些东西, 则需要自行添加中间件进行支持.
-   * TODO 在 demo 中进行了演示.
+   * 在 demo-4 中进行演示, 如何支持 Promise 和 Function 类型的 action
    * 
    * @param action 用一个纯对象来代表“状态的改变是什么”, 每一个 action 
    * 都必须要有一个 type 属性, 最好是字符串类型的. 
@@ -143,7 +143,8 @@ export default function createStore(
   }
 
   /**
-   * 替换当前的 reducer
+   * 替换当前的 reducer, 当希望组件实现按需加载的时候, 可以使用这个 replaceReducer
+   * 重载 reducer.
    */
   function replaceReducer(nextReducer) {
     currentReducer = nextReducer
